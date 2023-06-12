@@ -5,7 +5,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
+      update = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
       v = "nvim";
       vf = "fd --type f --hidden --exclude .git | fzf-tmux | xargs nvim";
       cdf = "cd $(fd --type directory  --hidden | fzf-tmux)";

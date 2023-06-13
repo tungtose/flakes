@@ -12,8 +12,9 @@ local function on_attach(bufnr)
 	api.config.mappings.default_on_attach(bufnr)
 
 	-- custom mappings
-	vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+	vim.keymap.del("n", "s", { buffer = bufnr })
 	vim.keymap.set("n", "<C-n>", ":NvimTreeOpen<CR>")
+	vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 	vim.keymap.set("n", "<C-f>", ":NvimTreeFindFile<CR>")
 	vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 end

@@ -2,7 +2,7 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 0.85
+  opacity: 0.9
 
   dimensions:
     columns: 100
@@ -25,17 +25,17 @@ scrolling:
 font:
   normal:
     family: JetBrainsMono Nerd Font
-    style: Light
+    style: Regular
 
   bold:
     family: JetBrainsMono Nerd Font
-    style: Regular
+    style: Bold
 
   italic:
     family: JetBrainsMono Nerd Font
     style: "Italic"
 
-  size: 15.0
+  size: 16.0
 
   offset:
     x: 0

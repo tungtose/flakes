@@ -5,7 +5,9 @@
 
     shellAliases = {
       ll = "ls -l";
+      g = "lazygit";
       update = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
+      uflake = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
       v = "nvim";
       vf = "fd --type f --hidden --exclude .git | fzf-tmux | xargs nvim";
       cdf = "cd $(fd --type directory  --hidden | fzf-tmux)";

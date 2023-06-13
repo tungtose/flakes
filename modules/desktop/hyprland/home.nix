@@ -149,6 +149,7 @@
       }
 
       bind = $mainMod, A, exec, alacritty -e zsh
+      bind = $mainMod SHIFT, A, exec, alacritty --class="termfloat" -e zsh
       bind = $mainMod, Return, exec, kitty fish
       bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat" fish
       bind = $mainMod SHIFT, P, killactive,
@@ -256,8 +257,8 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=$mainMod,B,exec,firefox
-      bind=$mainMod SHIFT,D,exec,kitty  --class="danmufloat" --hold sh -c "export TERM=xterm-256color && bili"
+      bind=$mainMod,B,exec,google-chrome
+      bind=$mainMod,F,exec,firefox
       bind=$mainMod SHIFT,X,exec,myswaylock
       bind=$mainMod,bracketleft,exec,grimblast --notify --cursor  copysave area ~/Pictures/$(date "+%Y-%m-%d"T"%H:%M:%S_no_watermark").png
       bind=$mainMod,bracketright,exec, grimblast --notify --cursor  copy area

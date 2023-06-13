@@ -1,16 +1,8 @@
 return {
 	"neovim/nvim-lspconfig",
-	--dependencies = { "williamboman/nvim-lsp-installer" },
 	config = function()
-		-- require("nvim-lsp-installer").setup({
-		-- 	-- Automatically download the LSP server set in advance
-		-- 	automatic_installation = true,
-		-- })
-
-		---------------------
 		-- Use an on_attach function to only map the following keys
 		-- after the language server attaches to the current buffer
-
 		local lsp_formatting = function(bufnr)
 			vim.lsp.buf.format({
 				filter = function(client)
@@ -25,24 +17,46 @@ return {
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		local on_attach = function(client, bufnr)
-			-- Mappings.
-			-- See `:help vim.lsp.*` for documentation on any of the below functions
-			--local bufopts = { noremap = true, silent = true, buffer = bufnr }
-			--vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
-			--vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-			-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-			--vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-			--vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
-			--[[ vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts) ]]
-			--[[ vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts) ]]
-			--[[ vim.keymap.set("n", "<space>wl", function() ]]
-			--[[ 	print(vim.inspect(vim.lsp.buf.list_workspace_folders())) ]]
-			--[[ end, bufopts) ]]
-			--vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-			--[[ vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts) ]]
-			-- vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
-			--[[ vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts) ]]
-			-- add to your shared on_attach callback
+			local nmap = function(keys, func, desc)
+				if desc then
+					desc = "LSP: " .. desc
+				end
+
+				vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+			end
+
+			nmap("<leader>cn", vim.lsp.buf.rename, "[R]e[n]ame")
+			nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+
+			nmap("<leader>d[", vim.diagnostic.goto_next, "[G]o [N]next")
+			nmap("<leader>d]", vim.diagnostic.goto_prev, "[G]o [P]rev")
+
+			nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+			nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+			nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+			nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+			nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+			nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+
+			nmap("<leader>F", vim.lsp.buf.format, "[F]ormat [C]ode")
+
+			-- See `:help K` for why this keymap
+			nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+			nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+
+			-- Lesser used LSP functionality
+			nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+			nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+			nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+			nmap("<leader>wl", function()
+				print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			end, "[W]orkspace [L]ist Folders")
+
+			-- Create a command `:Format` local to the LSP buffer
+			vim.api.nvim_buf_create_user_command(bufnr, "F", function(_)
+				vim.lsp.buf.format()
+			end, { desc = "Format current buffer with LSP" })
+
 			if client.supports_method("textDocument/formatting") then
 				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 				vim.api.nvim_create_autocmd("BufWritePre", {
@@ -69,46 +83,48 @@ return {
 		-- setup languages --
 		---------------------
 		-- GoLang
-		nvim_lsp["gopls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				gopls = {
-					experimentalPostfixCompletions = true,
-					analyses = {
-						unusedparams = true,
-						shadow = true,
-					},
-					staticcheck = true,
-				},
-			},
-			init_options = {
-				usePlaceholders = true,
-			},
-		})
+		--[[ nvim_lsp["gopls"].setup({ ]]
+		--[[ 	on_attach = on_attach, ]]
+		--[[ 	capabilities = capabilities, ]]
+		--[[ 	settings = { ]]
+		--[[ 		gopls = { ]]
+		--[[ 			experimentalPostfixCompletions = true, ]]
+		--[[ 			analyses = { ]]
+		--[[ 				unusedparams = true, ]]
+		--[[ 				shadow = true, ]]
+		--[[ 			}, ]]
+		--[[ 			staticcheck = true, ]]
+		--[[ 		}, ]]
+		--[[ 	}, ]]
+		--[[ 	init_options = { ]]
+		--[[ 		usePlaceholders = true, ]]
+		--[[ 	}, ]]
+		--[[ }) ]]
+
 		--Rust
-		-- require("rust-tools").setup({
-		-- 	server = {
-		-- 		capabilities = capabilities,
-		-- 		on_attach = on_attach,
-		-- 	},
-		-- }) -- C
-		nvim_lsp.clangd.setup({})
-		--Python
-		nvim_lsp.pyright.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				python = {
-					analysis = {
-						autoSearchPaths = true,
-						diagnosticMode = "workspace",
-						useLibraryCodeForTypes = true,
-						typeCheckingMode = "off",
-					},
-				},
+		require("rust-tools").setup({
+			server = {
+				capabilities = capabilities,
+				on_attach = on_attach,
 			},
-		})
+		}) -- C
+		nvim_lsp.clangd.setup({})
+
+		--Python
+		--[[ nvim_lsp.pyright.setup({ ]]
+		--[[ 	on_attach = on_attach, ]]
+		--[[ 	capabilities = capabilities, ]]
+		--[[ 	settings = { ]]
+		--[[ 		python = { ]]
+		--[[ 			analysis = { ]]
+		--[[ 				autoSearchPaths = true, ]]
+		--[[ 				diagnosticMode = "workspace", ]]
+		--[[ 				useLibraryCodeForTypes = true, ]]
+		--[[ 				typeCheckingMode = "off", ]]
+		--[[ 			}, ]]
+		--[[ 		}, ]]
+		--[[ 	}, ]]
+		--[[ }) ]]
 
 		--sumneko_lua
 		nvim_lsp.lua_ls.setup({
@@ -141,9 +157,10 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
+
 		nvim_lsp.html.setup({
 			on_attach = on_attach,
-			cmd = { "/home/ruixi/.npm-global/bin/vscode-html-language-server", "--stdio" },
+			cmd = { "/home/tung/.npm-global/bin/vscode-html-language-server", "--stdio" },
 		})
 
 		nvim_lsp.cssls.setup({
@@ -151,9 +168,10 @@ return {
 			cmd = { "/home/tung/.npm-global/bin/vscode-css-language-server", "--stdio" },
 		})
 
-		nvim_lsp.zk.setup({
-			cmd = { "zk", "lsp" },
-		})
+		--[[ nvim_lsp.zk.setup({ ]]
+		--[[ 	cmd = { "zk", "lsp" }, ]]
+		--[[ }) ]]
+		--[[]]
 
 		nvim_lsp.tsserver.setup({
 			on_attach = on_attach,
@@ -167,7 +185,9 @@ return {
 		nvim_lsp.rnix.setup({
 			on_attach = on_attach,
 		})
-		nvim_lsp.hls.setup({})
+
+		-- Haskell
+		--[[ nvim_lsp.hls.setup({}) ]]
 
 		-- ebuild Syntastic(install dev-util/pkgcheck)
 		vim.g.syntastic_ebuild_checkers = "pkgcheck"

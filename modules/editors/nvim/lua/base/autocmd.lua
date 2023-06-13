@@ -14,3 +14,4 @@ vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
 
 -- set bg transparent
 --vim.cmd([[autocmd ColorScheme * highlight Normal guibg=NONE ctermbg=NONE]])
+--

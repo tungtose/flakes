@@ -15,9 +15,6 @@ return {
 			renderer = {
 				group_empty = true,
 			},
-			filters = {
-				dotfiles = true,
-			},
 			view = {
 				adaptive_size = true,
 				mappings = {

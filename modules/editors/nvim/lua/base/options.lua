@@ -27,10 +27,6 @@ local options = {
 	foldlevel = 99,
 }
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true
-
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end

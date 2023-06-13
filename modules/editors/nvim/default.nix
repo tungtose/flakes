@@ -32,7 +32,6 @@ in
       rnix-lsp
       lua-language-server
       gopls
-      pyright
       zk
       rust-analyzer
       clang-tools
@@ -46,7 +45,6 @@ in
       rustfmt
       beautysh
       nodePackages.prettier
-      stylish-haskell
       #-- Debug --#
       lldb
     ];

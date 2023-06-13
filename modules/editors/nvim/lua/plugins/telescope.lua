@@ -2,7 +2,8 @@ return {
 	"nvim-telescope/telescope.nvim",
 	keys = {
 		{ "<Leader>e", "<cmd>Telescope<CR>", desc = "telescope" },
-		{ "<Leader>sf", "<cmd>Telescope find_files<CR>" },
+		{ "<Leader>sa", "<cmd>Telescope find_files<CR>" },
+		{ "<Leader>sf", "<cmd>Telescope git_files<CR>" },
 		{ "<Leader>sb", "<cmd>Telescope oldfiles<CR>" },
 		{ "<Leader>sw", "<cmd>Telescope grep_string<CR>" },
 		{ "<Leader>sg", "<cmd>Telescope live_grep<CR>" },
@@ -21,7 +22,6 @@ return {
 
 		telescope.setup({
 			defaults = {
-
 				prompt_prefix = " ",
 				selection_caret = " ",
 				path_display = { "smart" },

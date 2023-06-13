@@ -102,12 +102,14 @@ return {
 		--[[ }) ]]
 
 		--Rust
-		require("rust-tools").setup({
-			server = {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			},
-		}) -- C
+		--[[ require("rust-tools").setup({ ]]
+		--[[ 	server = { ]]
+		--[[ 		capabilities = capabilities, ]]
+		--[[ 		on_attach = on_attach, ]]
+		--[[ 	}, ]]
+		--[[ })  ]]
+
+    -- C
 		nvim_lsp.clangd.setup({})
 
 		--Python

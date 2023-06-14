@@ -8,6 +8,9 @@
       g = "lazygit";
       update = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
       uflake = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
+      fl = "cd /home/tung/projects/flakes";
+      fb = "sudo nixos-rebuild switch --flake .#laptop";
+      up = "fl && fb";
       v = "nvim";
       vf = "fd --type f --hidden --exclude .git | fzf-tmux | xargs nvim";
       cdf = "cd $(fd --type directory  --hidden | fzf-tmux)";

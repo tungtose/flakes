@@ -14,10 +14,10 @@ in
     inherit system;
     specialArgs = { inherit inputs user; };
     modules = [
-      ./laptop/wayland
+      ./system.nix
       # ./laptop/x11 
     ] ++ [
-      ./system.nix
+      ./laptop/wayland
     ] ++ [
       inputs.hyprland.nixosModules.default
       inputs.home-manager.nixosModules.home-manager

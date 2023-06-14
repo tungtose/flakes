@@ -3,6 +3,14 @@
   programs.zsh = {
     enable = true;
 
+    sessionVariables = {
+      # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux#configuration-variables
+      # automatically start tmux
+      ZSH_TMUX_AUTOSTART = "true";
+      ZSH_TMUX_AUTOCONNECT = "false";
+      ZSH_TMUX_CONFIG = "$XDG_CONFIG_HOME/tmux/tmux.conf";
+    };
+
     shellAliases = {
       ll = "ls -l";
       g = "lazygit";
@@ -30,7 +38,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ "git" "tmux" ];
       theme = "robbyrussell";
     };
   };

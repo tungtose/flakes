@@ -25,7 +25,6 @@
       unbind C-b
       set-option -g prefix C-t
       set-option -g repeat-time 0
-      set-option -g default-shell /etc/profiles/per-user/tung/bin/zsh
       #### Key bindings
 
       set-window-option -g mode-keys vi

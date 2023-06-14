@@ -10,9 +10,12 @@
     # Force tmux to use /tmp for sockets (WSL2 compat)
     secureSocket = false;
 
-    plugins = with pkgs; [
-      tmuxPlugins.better-mouse-mode
-    ];
+    shell = "/etc/profiles/per-user/tung/bin/zsh";
+
+    plugins = with pkgs;
+      [
+        tmuxPlugins.better-mouse-mode
+      ];
 
     extraConfig = ''
       set -g base-index 1
@@ -21,18 +24,31 @@
       set -g default-terminal "xterm-256color"
       #set -ga terminal-overrides ",*256col*:Tc"
       set -ga terminal-overrides ",xterm-256color:Tc"
+
       # action key
       unbind C-b
       set-option -g prefix C-t
       set-option -g repeat-time 0
-      set-option -g default-shell /bin/zsh
-      #### Key bindings
+
+      thm_bg="#303446"
+      thm_fg="#c6d0f5"
+      thm_cyan="#99d1db"
+      thm_black="#292c3c"
+      thm_gray="#414559"
+      thm_magenta="#ca9ee6"
+      thm_pink="#f4b8e4"
+      thm_red="#e78284"
+      thm_green="#a6d189"
+      thm_yellow="#e5c890"
+      thm_blue="#8caaee"
+      thm_orange="#ef9f76"
+      thm_black4="#626880"
 
       set-window-option -g mode-keys vi
 
       #bind t send-key C-t
       # Reload settings
-      bind r source-file ~/.tmux.conf \; display "Reloaded!"
+      bind r source-file ~/.config/tmux.conf \; display "Reloaded!"
       # Open current directory
       bind o run-shell "open #{pane_current_path}"
       bind -r e kill-pane -a
@@ -56,50 +72,8 @@
       #### basic settings
 
       set-option -g status-justify "left"
-      #set-option utf8-default on
-      #set-option -g mouse-select-pane
       set-window-option -g mode-keys vi
-      #set-window-optio -g utf8 on
-      # look'n feel
-      set-option -g status-fg cyan
-      set-option -g status-bg black
-      set -g pane-active-border-style fg=colour166,bg=default
-      set -g window-style fg=colour10,bg=default
-      set -g window-active-style fg=colour12,bg=default
-      set-option -g history-limit 64096
-
       set -sg escape-time 10
-
-      #### COLOUR
-
-      color_status_text="colour245"
-      color_window_off_status_bg="colour238"
-      color_light="white" #colour015
-      color_dark="colour232" # black= colour232
-      color_window_off_status_current_bg="colour254"
-
-      # default statusbar colors
-      set-option -g status-style bg=colour235,fg=colour136,default
-
-      # default window title colors
-      set-window-option -g window-status-style fg=colour244,bg=colour234,dim
-
-      # active window title colors
-      set-window-option -g window-status-current-style fg=colour166,bg=default,bright
-
-      # pane border
-      set-option -g pane-border-style fg=colour235 #base02
-      set-option -g pane-active-border-style fg=colour136,bg=colour235
-
-      # message text
-      set-option -g message-style bg=colour235,fg=colour166
-
-      # pane number display
-      set-option -g display-panes-active-colour colour33 #blue
-      set-option -g display-panes-colour colour166 #orange
-
-      # clock
-      set-window-option -g clock-mode-colour colour64 #green
 
       # allow the title bar to adapt to whatever host you connect to
       set -g set-titles on

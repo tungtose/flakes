@@ -23,9 +23,10 @@
       enable = true;
     };
   };
+
   environment = {
     binsh = "${pkgs.dash}/bin/dash";
-    shells = with pkgs; [ fish ];
+    shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       git
       neovim
@@ -35,6 +36,7 @@
       ranger
       killall
       socat
+      zsh
     ];
   };
   services.dbus.enable = true;

@@ -48,7 +48,7 @@
 
       #bind t send-key C-t
       # Reload settings
-      bind r source-file ~/.config/tmux.conf \; display "Reloaded!"
+      bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
       # Open current directory
       bind o run-shell "open #{pane_current_path}"
       bind -r e kill-pane -a

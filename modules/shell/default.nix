@@ -1,5 +1,6 @@
 [
   ./zsh.nix
+  ./direnv.nix
   ./fish/fish.nix
   ./git.nix
   ./bash.nix

@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "cattpuccin-frappe-gtk";
-  version = "0.2.7";
+  version = "0.6.0";
 
   src = fetchzip {
     url =
-      "https://github.com/catppuccin/gtk/releases/download/v-0.2.7/Catppuccin-Frappe-Pink.zip";
+      "https://github.com/catppuccin/gtk/releases/download/v0.6.0/Catppuccin-Frappe-Standard-Pink-Dark.zip";
     sha256 = "w7yv9e9MuZgmCdr/RdDxg2hAeIhb1f82idUj4diI8v8=";
     stripRoot = false;
   };

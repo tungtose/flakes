@@ -15,6 +15,7 @@
     plugins = with pkgs;
       [
         tmuxPlugins.better-mouse-mode
+        tmuxPlugins.catppuccin
       ];
 
     extraConfig = ''
@@ -100,6 +101,10 @@
       wg_user_host="#[fg=$color_secondary]#(whoami)#[default]@#H"
       wg_is_keys_off="#[fg=$color_light,bg=$color_window_off_indicator]#([ $(tmux show-option -qv key-table) = 'off' ] && echo 'OFF')#[default]"
       set -g status-right "$wg_is_keys_off | $wg_user_host"
+
+
+      set -g @plugin 'catppuccin/tmux'
+      set -g @catppuccin_flavour 'frappe'
     '';
   };
 

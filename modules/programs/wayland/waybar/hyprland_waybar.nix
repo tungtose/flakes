@@ -94,7 +94,7 @@
                  padding-right: 6px;
                  color: #7ebae4;
                }
-         #mode, #clock, #memory, #temperature,#cpu,#mpd, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
+         #mode, #clock, #memory, #temperature,#cpu, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
                  padding-left: 10px;
                  padding-right: 10px;
                }
@@ -146,16 +146,6 @@
          #tray {
                  padding-right: 8px;
                  padding-left: 10px;
-               }
-         #mpd.paused {
-                 color: #414868;
-                 font-style: italic;
-               }
-         #mpd.stopped {
-                 background: transparent;
-               }
-         #mpd {
-                 color: #c0caf5;
                }
          #custom-cava-internal{
                  font-family: "Hack Nerd Font" ;
@@ -253,35 +243,21 @@
           "format" = "{:%I:%M %p  %A %b %d}";
           "tooltip" = true;
           /* "tooltip-format"= "{=%A; %d %B %Y}\n<tt>{calendar}</tt>" */
-          "tooltip-format" = "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>";
+          "tooltip-format" = "<tt>{calendar}</tt>";
         };
         "memory" = {
-          "interval" = 1;
+          "interval" = 3;
           "format" = "﬙ {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
-          "interval" = 1;
+          "interval" = 5;
           "format" = " {usage}%";
         };
-        "mpd" = {
-          "max-length" = 25;
-          "format" = "<span foreground='#bb9af7'></span> {title}";
-          "format-paused" = " {title}";
-          "format-stopped" = "<span foreground='#bb9af7'></span>";
-          "format-disconnected" = "";
-          "on-click" = "mpc --quiet toggle";
-          "on-click-right" = "mpc update; mpc ls | mpc add";
-          "on-click-middle" = "kitty --class='ncmpcpp' ncmpcpp ";
-          "on-scroll-up" = "mpc --quiet prev";
-          "on-scroll-down" = "mpc --quiet next";
-          "smooth-scrolling-threshold" = 5;
-          "tooltip-format" = "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})";
-        };
         "network" = {
-          "interval" = 1;
+          "interval" = 5;
           "format-wifi" = "說 {essid}";
           "format-ethernet" = "  {ifname} ({ipaddr})";
           "format-linked" = "說 {essid} (No IP)";
@@ -348,11 +324,11 @@
               "format": "{:%I:%M %p  %A %b %d}",
               "interval": 1,
               "tooltip": true,
-              "tooltip-format": "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>"
+              "tooltip-format": "<tt>{calendar}</tt>"
             },
             "cpu": {
               "format": " {usage}%",
-              "interval": 1
+              "interval": 5
             },
             "custom/cava-internal": {
               "exec": "sleep 1s && cava-internal",
@@ -898,18 +874,6 @@
                 background: #3b4252;
                 color: #DEE2EA;
         }
-        #mpd.paused {
-                color: rgb(192, 202, 245);
-                font-style: italic;
-              }
-        #mpd.stopped {
-                background: transparent;
-              }
-        #mpd {
-                  color: #E4E8EF;
-
-                /* color: #c0caf5; */
-              }
         #custom-cava-internal{
                 font-family: "Hack Nerd Font" ;
               }

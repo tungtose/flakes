@@ -35,7 +35,6 @@ in
       zk
       rust-analyzer
       clang-tools
-      haskell-language-server
       #-- tree-sitter --#
       tree-sitter
       #-- format --#

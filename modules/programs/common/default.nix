@@ -10,5 +10,4 @@
   ./kitty
   ./alacritty
   ./google
-  # ./discord
 ]

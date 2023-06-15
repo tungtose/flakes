@@ -257,7 +257,7 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=$mainMod,B,exec,google-chrome
+      bind=$mainMod SHIFT,B,exec,google-chrome
       # bind=$mainMod,F,exec,firefox
       bind=$mainMod SHIFT,X,exec,myswaylock
       bind=$mainMod,bracketleft,exec,grimblast --notify --cursor  copysave area ~/Pictures/$(date "+%Y-%m-%d"T"%H:%M:%S_no_watermark").png

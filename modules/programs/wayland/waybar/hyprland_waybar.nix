@@ -160,8 +160,6 @@
           "temperature"
           #"idle_inhibitor"
           "custom/wall"
-          "mpd"
-          "custom/cava-internal"
         ];
         modules-center = [
           "clock"
@@ -185,7 +183,7 @@
           "on-click" = "wallpaper_random";
           "on-click-middle" = "default_wall";
           "on-click-right" = "killall dynamic_wallpaper || dynamic_wallpaper &";
-          "format" = " ﴔ ";
+          "format" = " 󰟾 ";
           "tooltip" = false;
         };
         "custom/cava-internal" = {
@@ -216,12 +214,9 @@
         "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{icon} {volume}%";
-          "format-muted" = "婢 Muted";
+          "format-muted" = "Muted";
           "format-icons" = {
             "default" = [ "" "" "" ];
-          };
-          "states" = {
-            "warning" = 85;
           };
           "on-click" = "pamixer -t";
           "tooltip" = false;
@@ -233,9 +228,9 @@
             "critical" = 10;
           };
           "format" = "{icon} {capacity}%";
-          "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
+          "format-icons" = [ "󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰂀" "󰂂" "󱟢" ];
           "format-full" = "{icon} {capacity}%";
-          "format-charging" = " {capacity}%";
+          "format-charging" = "󰂄 {capacity}%";
           "tooltip" = false;
         };
         "clock" = {
@@ -247,21 +242,21 @@
         };
         "memory" = {
           "interval" = 3;
-          "format" = "﬙ {percentage}%";
+          "format" = "󰍛 {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
           "interval" = 5;
-          "format" = " {usage}%";
+          "format" = "󰘚 {usage}%";
         };
         "network" = {
           "interval" = 5;
-          "format-wifi" = "說 {essid}";
-          "format-ethernet" = "  {ifname} ({ipaddr})";
-          "format-linked" = "說 {essid} (No IP)";
-          "format-disconnected" = "說 Disconnected";
+          "format-wifi" = " {essid}";
+          "format-ethernet" = "󰈁 {ifname} ({ipaddr})";
+          "format-linked" = "󱚵 {essid} (No IP)";
+          "format-disconnected" = "Disconnected";
           "tooltip" = false;
         };
         "temperature" = {

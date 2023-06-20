@@ -193,8 +193,8 @@
       bind = $mainMod, 8, workspace, 8
       bind = $mainMod, 9, workspace, 9
       bind = $mainMod, 0, workspace, 10
-      bind = $mainMod, L, workspace, +1
-      bind = $mainMod, H, workspace, -1
+      # bind = $mainMod, L, workspace, +1
+      # bind = $mainMod, H, workspace, -1
       bind = $mainMod, period, workspace, e+1
       bind = $mainMod, comma, workspace,e-1
       bind = $mainMod, Q, workspace,QQ
@@ -277,6 +277,9 @@
       bind=,XF86AudioPlay,exec, mpc -q toggle 
       bind=,XF86AudioNext,exec, mpc -q next 
       bind=,XF86AudioPrev,exec, mpc -q prev
+      bind=$mainMod,J,exec, player_play_pause
+      bind=$mainMod,N,exec, player_next
+      bind=$mainMod SHIFT,N,exec, player_previous
 
       #---------------#
       # waybar toggle #
@@ -356,7 +359,7 @@
       windowrule=workspace name:QQ, title:Icalingua++
       windowrule=workspace name:TG, title:Telegram
       windowrule=workspace name:Music, title:NetEase Cloud Music Gtk4
-      windowrule=workspace name:Music, musicfox
+      windowrule=workspace name:Music, Spotify
       windowrule=float,ncmpcpp
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp

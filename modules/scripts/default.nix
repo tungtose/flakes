@@ -199,6 +199,18 @@ let
 
     socat - UNIX-CONNECT:/tmp/hypr/$(echo $HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock | while read line; do border_color $line; done
   '';
+  player_next = pkgs.writeShellScriptBin "player_next" ''
+    #!/bin/bash
+    playerctl next
+  '';
+  player_previous = pkgs.writeShellScriptBin "player_previous" ''
+    #!/bin/bash
+    playerctl previous
+  '';
+  player_play_pause = pkgs.writeShellScriptBin "player_play_pause" ''
+    #!/bin/bash
+    playerctl play-pause
+  '';
 in
 {
   home.packages = with pkgs; [
@@ -212,5 +224,8 @@ in
     default_wall
     launch_waybar
     border_color
+    player_next
+    player_previous
+    player_play_pause
   ];
 }

@@ -53,6 +53,9 @@
       # Open current directory
       bind o run-shell "open #{pane_current_path}"
       bind -r e kill-pane -a
+      bind '"' split-window -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
 
       # vim-like pane switching
       bind -r k select-pane -U 

@@ -42,7 +42,7 @@
         numlock_by_default = true
 
         touchpad {
-        natural_scroll = yes
+          natural_scroll = yes
         }
 
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
@@ -114,7 +114,7 @@
       #   animation = workspaces, 1, 6, default
       # }
       animations {
-        enabled=1
+        enabled= 0
         bezier = overshot, 0.13, 0.99, 0.29, 1.1
         animation = windows, 1, 4, overshot, slide
         animation = windowsOut, 1, 5, default, popin 80%

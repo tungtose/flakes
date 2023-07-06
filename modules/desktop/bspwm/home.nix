@@ -19,7 +19,7 @@
         "sleep 2s;polybar -q main"
       ];
       monitors = {
-        eDP-2 = [
+        DP-0 = [
           "I"
           "II"
           "III"

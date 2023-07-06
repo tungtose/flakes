@@ -3,6 +3,7 @@
   imports = [ ../../programs/x11/polybar ];
   services.xserver = {
     enable = true;
+    xkbOptions = "caps:swapescape";
     displayManager = {
       startx.enable = true;
     };

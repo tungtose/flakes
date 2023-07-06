@@ -8,8 +8,8 @@
         "alt + Return" = "kitty fish";
         "alt + shift + Return" = "kitty --class='termfloat' fish";
         "alt + Escape" = "pkill -USER1 -x sxhkd";
-        "alt + shift + p" = "bspc node -c";
-        "alt + shift + {q,r}" = "bspc {quit,wm -r}";
+        "alt + shift + q" = "bspc node -c";
+        "alt + shift + r" = "bspc {quit,wm -r}";
         "alt + shift + space" = "bspc node focused -t \~floating";
         "alt + shift + g" = "bspc config window_gap 5";
         "alt + g" = "bspc config window_gap 0";
@@ -46,9 +46,9 @@
         "alt + m" = "netease-cloud-music-gtk4";
         "alt + shift + m" = "kitty --class='musicfox' 'musicfox'";
         "alt + shift +d" = "kitty  --class='danmufloat' --hold sh -c 'cd /home/ruixi/Codelearning/go/src/bilibili_live_tui/  && export TERM=xterm-256color && go run main.go -c config.toml'";
-        "alt + t" = "telegram-desktop";
         "alt + q" = "nvidia-offload icalingua-plus-plus";
-        "alt + a" = "flameshot_watermark";
+        "alt + a" = "alacritty -e zsh";
+        "alt + shift + a" = "alacritty --class='termfloat' -e zsh";
         "Super_L" = "pkill rofi || bash ~/.config/rofi/launcher.sh";
         "alt + Super_L" = "bash ~/.config/rofi/powermenu.sh";
         "alt + o" = "polybar-msg cmd toggle";

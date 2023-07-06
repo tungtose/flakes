@@ -3,6 +3,7 @@
 {
   imports =
     (import ../../../modules/hardware) ++
+    (import ../../../modules/virtualisation) ++
     [
       ../hardware-configuration.nix
       ../../../modules/fonts
@@ -10,9 +11,10 @@
       ../../../modules/desktop/bspwm
     ];
 
-  users.users.root.initialHashedPassword = "$6$4lwj3AGq8M9CQE2.$q8cNPghWHTl/dfE0dMPm2vsh0cMpY2gWxw91/Uadi8jShbvUHJJu3Jg0CvSpqrlEB7a3kvWDf/p2CI3mSqP1c/";
+  users.users.root.initialHashedPassword = "$6$mEqF1oBoptW2eh/a$zDs/Fe4C0x9ICXpIrLpamDFt4xPa.BiCsZzFUAzp5zrOn2xxUC.lRP968kuyLZDE3DSTKdhmt22si9bQ66Wi1/";
   users.users.${user} = {
-    initialHashedPassword = "$6$4lwj3AGq8M9CQE2.$q8cNPghWHTl/dfE0dMPm2vsh0cMpY2gWxw91/Uadi8jShbvUHJJu3Jg0CvSpqrlEB7a3kvWDf/p2CI3mSqP1c/";
+    initialHashedPassword = "$6$mEqF1oBoptW2eh/a$zDs/Fe4C0x9ICXpIrLpamDFt4xPa.BiCsZzFUAzp5zrOn2xxUC.lRP968kuyLZDE3DSTKdhmt22si9bQ66Wi1/";
+    # shell = pkgs.zsh;
     # shell = pkgs.fish;
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
@@ -63,6 +65,7 @@
       pulsemixer
       imagemagick
       flameshot
+      jq
     ];
   };
 

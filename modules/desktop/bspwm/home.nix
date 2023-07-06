@@ -19,7 +19,7 @@
         "sleep 2s;polybar -q main"
       ];
       monitors = {
-        eDP-2 = [
+        DP-0 = [
           "I"
           "II"
           "III"
@@ -78,6 +78,15 @@
         if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
            exec  startx
         fi
+      '';
+    };
+    fish = {
+      loginShellInit = ''
+        if status --is-login
+            if test -z "$DISPLAY" -a $XDG_VTNR = 1
+                exec startx
+            end
+        end
       '';
     };
   };

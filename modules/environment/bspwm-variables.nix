@@ -5,7 +5,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
       GLFW_IM_MODULE = "ibus";
       QT_QPA_PLATFORMTHEME = "gtk3";
       XDG_CACHE_HOME = "\${HOME}/.cache";
@@ -16,6 +16,7 @@
     sessionPath = [
       "$HOME/.local/bin"
       "$HOME/.npm-global/bin"
+      "$HOME/.cargo/bin"
     ];
   };
 }

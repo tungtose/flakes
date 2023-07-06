@@ -75,7 +75,7 @@
         ];
 
         # animations
-        animations = true;
+        animations = false;
         animation-window-mass = 0.5;
         animation-dampening = 16;
         animation-stiffness-in-tag = 125;

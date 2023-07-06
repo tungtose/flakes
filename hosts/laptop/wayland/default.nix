@@ -68,8 +68,12 @@
       pkgs.sway-contrib.grimshot
       flameshot
       grim
+      jq
       plasma-pa
+      slurp
       pulseaudioFull
+      qt6.qtwayland
+      qt6.full
     ];
   };
 

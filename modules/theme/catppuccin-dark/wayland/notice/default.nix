@@ -2,7 +2,6 @@
 
 {
   services.mako = {
-    default-timeout = 5000;
     font = "Iosevka Nerd Font 12";
     width = 256;
     height = 500;
@@ -11,6 +10,7 @@
     borderSize = 3;
     borderRadius = 3;
     backgroundColor = "#1a1b26";
+    defaultTimeout = 5000;
     borderColor = "#c0caf5";
     progressColor = "over #302D41";
     textColor = "#c0caf5";

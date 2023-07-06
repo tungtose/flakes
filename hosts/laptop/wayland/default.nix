@@ -68,8 +68,12 @@
       pkgs.sway-contrib.grimshot
       flameshot
       grim
+      plasma-pa
+      pulseaudioFull
     ];
   };
+
+  sound.enable = false;
 
   services = {
     xserver = {
@@ -92,6 +96,7 @@
         nvidia-vaapi-driver
       ];
     };
+    pulseaudio.enable = false;
   };
 
   services = {
@@ -101,6 +106,7 @@
     pipewire = {
       enable = true;
       alsa.enable = true;
+      wireplumber.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;

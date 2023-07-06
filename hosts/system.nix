@@ -37,6 +37,8 @@
       killall
       socat
       zsh
+      gcc
+      sqlite
     ];
   };
   services.dbus.enable = true;

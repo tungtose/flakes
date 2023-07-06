@@ -11,6 +11,7 @@
     borderRadius = 3;
     backgroundColor = "#eff1f5";
     borderColor = "#c0caf5";
+    default-timeout = 5000;
     progressColor = "over #ccd0da";
     textColor = "#414868";
     extraConfig = ''

@@ -2,6 +2,7 @@
 
 {
   services.mako = {
+    default-timeout = 5000;
     font = "Iosevka Nerd Font 12";
     width = 256;
     height = 500;

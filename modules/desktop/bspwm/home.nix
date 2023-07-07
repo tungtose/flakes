@@ -5,7 +5,7 @@
     (import ../../environment/bspwm-variables.nix)
   ];
   xsession = {
-    enable = true;
+    enable = false;
     numlock.enable = true;
     windowManager.bspwm = {
       enable = true;

@@ -49,7 +49,7 @@
         ];
 
         # opacity
-        active-opacity = 0.93;
+        active-opacity = 1;
         opacity-rule = [
           "100:_NET_WM_STATE@:32a *= '_NET_WM_STATE_FULLSCREEN'"
           "100:_NET_WM_STATE@:32a *= '_NET_WM_STATE_STICKY'"

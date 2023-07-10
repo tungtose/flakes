@@ -43,7 +43,7 @@ return {
 			Unit = "U",
 			Value = "",
 			Enum = "",
-			Keyword = "",
+			Keyword = "",
 			Snippet = "",
 			Color = "",
 			File = "",

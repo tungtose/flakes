@@ -33,7 +33,6 @@ in
       lua-language-server
       gopls
       zk
-      rust-analyzer
       clang-tools
       #-- tree-sitter --#
       tree-sitter
@@ -41,6 +40,8 @@ in
       stylua
       black
       nixpkgs-fmt
+      rust-analyzer
+      clippy
       rustfmt
       beautysh
       nodePackages.prettier

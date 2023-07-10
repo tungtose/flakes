@@ -1,5 +1,10 @@
 return {
 	"neovim/nvim-lspconfig",
+	name = "lspconfig",
+	lazy = false,
+	dependencies = {
+		{ "simrat39/rust-tools.nvim", name = "rust-tools" },
+	},
 	config = function()
 		-- Use an on_attach function to only map the following keys
 		-- after the language server attaches to the current buffer
@@ -155,10 +160,43 @@ return {
 			},
 		})
 
-		nvim_lsp.rust_analyzer.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
+		local rt = require("rust-tools")
+
+		rt.setup({
+			server = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					["rust-analyzer"] = {
+						-- enable clippy on save
+						checkOnSave = {
+							command = "clippy",
+						},
+					},
+				},
+				--[[       function(_, bufnr) ]]
+				--[[        ]]
+				--[[ 	-- Hover actions ]]
+				--[[ 	vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr }) ]]
+				--[[ 	-- Code action groups ]]
+				--[[ 	vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr }) ]]
+				--[[ end, ]]
+			},
 		})
+
+		--Rust
+		--[[ require("rust-tools").setup({ ]]
+		--[[ 	server = { ]]
+		--[[ 		capabilities = capabilities, ]]
+		--[[ 		on_attach = on_attach, ]]
+		--[[ 	}, ]]
+		--[[ })  ]]
+
+		--[[ nvim_lsp.rust_analyzer.setup({ ]]
+		--[[ 	on_attach = on_attach, ]]
+		--[[ 	capabilities = capabilities, ]]
+		--[[ 	filetypes = { "rust" }, ]]
+		--[[ }) ]]
 
 		nvim_lsp.html.setup({
 			on_attach = on_attach,
@@ -181,7 +219,7 @@ return {
 		})
 
 		nvim_lsp.bashls.setup({
-			cmd = { "/home/tung/.npm-global/bin/bash-language-server", "start" },
+			cmd = { "bash-language-server", "start" },
 		})
 
 		nvim_lsp.rnix.setup({
@@ -198,7 +236,7 @@ return {
 		-- UI --
 		--------
 		--Change diagnostic symbols in the sign column (gutter)
-		local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+		local signs = { Error = "", Warn = "", Hint = "󰅾", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })

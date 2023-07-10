@@ -80,30 +80,6 @@
   sound.enable = false;
 
   services = {
-    xserver = {
-      enable = true;
-      videoDrivers = [ "nvidia" ];
-      layout = "us";
-      xkbVariant = "";
-    };
-  };
-
-  hardware = {
-    nvidia = {
-      powerManagement.enable = true;
-      modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
-    opengl = {
-      enable = true;
-      extraPackages = with pkgs; [
-        nvidia-vaapi-driver
-      ];
-    };
-    pulseaudio.enable = false;
-  };
-
-  services = {
     dbus.packages = [ pkgs.gcr ];
     getty.autologinUser = "${user}";
     gvfs.enable = true;

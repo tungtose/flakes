@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	keys = {
-		{ "<Leader>e", "<cmd>Telescope<CR>", desc = "telescope" },
+		--[[ { "<Leader>e", "<cmd>Telescope<CR>", desc = "telescope" }, ]]
 		{ "<Leader>sa", "<cmd>Telescope find_files<CR>" },
 		{ "<Leader>sf", "<cmd>Telescope git_files<CR>" },
 		{ "<Leader>sb", "<cmd>Telescope oldfiles<CR>" },

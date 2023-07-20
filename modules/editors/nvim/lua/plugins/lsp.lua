@@ -4,6 +4,7 @@ return {
 	lazy = false,
 	dependencies = {
 		{ "simrat39/rust-tools.nvim", name = "rust-tools" },
+		{ "j-hui/fidget.nvim", name = "fidget" },
 	},
 	config = function()
 		-- Use an on_attach function to only map the following keys
@@ -105,15 +106,6 @@ return {
 		--[[ 		usePlaceholders = true, ]]
 		--[[ 	}, ]]
 		--[[ }) ]]
-
-		--Rust
-		--[[ require("rust-tools").setup({ ]]
-		--[[ 	server = { ]]
-		--[[ 		capabilities = capabilities, ]]
-		--[[ 		on_attach = on_attach, ]]
-		--[[ 	}, ]]
-		--[[ })  ]]
-
 		-- C
 		nvim_lsp.clangd.setup({})
 
@@ -174,13 +166,6 @@ return {
 						},
 					},
 				},
-				--[[       function(_, bufnr) ]]
-				--[[        ]]
-				--[[ 	-- Hover actions ]]
-				--[[ 	vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr }) ]]
-				--[[ 	-- Code action groups ]]
-				--[[ 	vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr }) ]]
-				--[[ end, ]]
 			},
 		})
 
@@ -226,11 +211,14 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- Haskell
-		--[[ nvim_lsp.hls.setup({}) ]]
-
-		-- ebuild Syntastic(install dev-util/pkgcheck)
 		vim.g.syntastic_ebuild_checkers = "pkgcheck"
+
+		-------------
+		--Progress --
+		-------------
+
+		local fidget = require("fidget")
+		fidget.setup()
 
 		--------
 		-- UI --

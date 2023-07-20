@@ -68,7 +68,6 @@ return {
 					telescope = true,
 					treesitter = true,
 					ts_rainbow = true,
-					lsp_saga = true,
 					lsp_trouble = true,
 					dap = {
 						enable = true,

@@ -38,7 +38,9 @@
       socat
       zsh
       gcc
-      sqlite
+      cargo
+      nodejs_20
+      bash
     ];
   };
   services.dbus.enable = true;

@@ -334,6 +334,8 @@
       windowrule=float,title:^(Picture-in-Picture)$
       windowrule=size 960 540,title:^(Picture-in-Picture)$
       windowrule=move 25%-,title:^(Picture-in-Picture)$
+      windowrule=float,title:^(thirteen)$
+      windowrule=float,title:^(Bevy App)$
       windowrule=float,imv
       windowrule=move 25%-,imv
       windowrule=size 960 540,imv

@@ -1,6 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "glepnir/lspsaga.nvim" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local highlights
 		if os.getenv("GTK_THEME") == "Nordic" then

@@ -41,6 +41,13 @@
       cargo
       nodejs_20
       bash
+      transmission-gtk
+      lutris
+      (lutris.override {
+        extraPkgs = pkgs: [
+          winetricks
+        ];
+      })
     ];
   };
   services.dbus.enable = true;

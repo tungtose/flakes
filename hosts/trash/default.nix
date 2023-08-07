@@ -12,7 +12,12 @@
     wslConf.automount.root = "/mnt";
   };
 
-   boot.isContainer = true;
+  boot.isContainer = true;
+
+  fonts.fonts = with pkgs; [
+    /* nerdfonts */
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
 
   networking.hostName = "nixos";
 
@@ -23,7 +28,6 @@
 
   users.users.root = {
     # Otherwise WSL fails to login as root with "initgroups failed 5"
-
     extraGroups = [ "root" ];
   };
 

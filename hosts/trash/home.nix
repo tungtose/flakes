@@ -5,14 +5,27 @@
     [ (import ../../modules/scripts) ] ++
     (import ../../modules/shell) ++
     (import ../../modules/editors);
-  # (import ../../modules/programs/x11) ++
-  # (import ../../modules/theme/catppuccin-dark/x11);
-  # (import ../../modules/theme/nord/x11);
+
+
+
+  /* fonts = { */
+  /*   fonts = with pkgs; [ */
+  /*     nerdfonts */
+  /*   ]; */
+  /* }; */
+
 
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
+    sessionVariables = {
+      MACHINE = "WSL";
+    };
   };
+
+  home.packages = with pkgs; [
+    ripgrep
+  ];
 
   programs = {
     home-manager.enable = true;

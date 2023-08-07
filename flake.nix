@@ -7,6 +7,9 @@
       hyprpicker.url = "github:hyprwm/hyprpicker";
       hypr-contrib.url = "github:hyprwm/contrib";
       flake-utils.url = "github:numtide/flake-utils";
+      nixos-wsl.url = "github:nix-community/nixos-wsl";
+      nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+      nixos-wsl.inputs.flake-utils.follows = "flake-utils";
       picom.url = "github:yaocccc/picom";
       hyprland = {
         url = "github:hyprwm/Hyprland";

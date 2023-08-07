@@ -5,7 +5,7 @@
 
   networking = {
     hostName = "nixos"; # Define your hostname.
-    networkmanager.enable = true;
+    # networkmanager.enable = true;
     hosts = {
       "185.199.109.133" = [ "raw.githubusercontent.com" ];
       "185.199.111.133" = [ "raw.githubusercontent.com" ];
@@ -31,9 +31,6 @@
       git
       neovim
       wget
-      neofetch
-      exa
-      ranger
       killall
       socat
       zsh
@@ -41,13 +38,16 @@
       cargo
       nodejs_20
       bash
-      transmission-gtk
-      lutris
-      (lutris.override {
-        extraPkgs = pkgs: [
-          winetricks
-        ];
-      })
+      # neofetch
+      # exa
+      # ranger
+      # transmission-gtk
+      # lutris
+      # (lutris.override {
+      #   extraPkgs = pkgs: [
+      #     winetricks
+      #   ];
+      # })
     ];
   };
   services.dbus.enable = true;

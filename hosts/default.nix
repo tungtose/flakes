@@ -9,6 +9,30 @@ let
   lib = nixpkgs.lib;
 in
 {
+  trash = lib.nixosSystem {
+	inherit system;
+    	specialArgs = { inherit inputs user; };
+	modules = [
+		./trash/default.nix
+	] ++ [
+		./system.nix
+	]
+	++ [
+	      inputs.home-manager.nixosModules.home-manager
+	      {
+		home-manager = {
+		  useGlobalPkgs = true;
+		  useUserPackages = true;
+		  extraSpecialArgs = { inherit user; };
+		  users.${user} = {
+		    imports = [
+		      (import ./trash/home.nix)
+		    ];
+		  };
+		};
+	      }
+	];
+  };
   laptop = lib.nixosSystem {
     # Laptop profile
     inherit system;

@@ -7,24 +7,24 @@
     (import ../../modules/editors);
 
 
-
-  /* fonts = { */
-  /*   fonts = with pkgs; [ */
-  /*     nerdfonts */
-  /*   ]; */
-  /* }; */
-
-
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
     sessionVariables = {
       MACHINE = "WSL";
     };
+
+    sessionPath = [
+      "$HOME/.local/bin"
+      "$HOME/.npm-global/bin"
+      "$HOME/.cargo/bin"
+    ];
   };
 
   home.packages = with pkgs; [
     ripgrep
+    btop
+    fd
   ];
 
   programs = {

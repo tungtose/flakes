@@ -49,10 +49,10 @@
       }
 
       general {
-        gaps_in = 3
-        gaps_out = 5
-        border_size = 3
-        col.active_border = rgb(ffc0cb)
+        gaps_in = 2
+        gaps_out = 3
+        border_size = 1
+        col.active_border = rgb(282c34)
         col.inactive_border = rgba(595959aa)
 
         layout = dwindle # master|dwindle 

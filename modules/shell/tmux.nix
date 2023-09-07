@@ -15,7 +15,7 @@
     plugins = with pkgs;
       [
         tmuxPlugins.better-mouse-mode
-        tmuxPlugins.catppuccin
+        tmuxPlugins.onedark-theme
       ];
 
     extraConfig = ''
@@ -106,8 +106,7 @@
       set -g status-right "$wg_is_keys_off | $wg_user_host"
 
 
-      set -g @plugin 'catppuccin/tmux'
-      set -g @catppuccin_flavour 'frappe'
+      set -g @plugin 'odedlaz/tmux-onedark-theme'
     '';
   };
 

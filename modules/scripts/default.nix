@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
 let
-  cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
-    cava -p ~/.config/cava/config1 | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
-  '';
   wallpaper_random = pkgs.writeShellScriptBin "wallpaper_random" ''
     if command -v swww >/dev/null 2>&1; then 
         killall dynamic_wallpaper
@@ -149,8 +146,6 @@ let
              swww img "${../theme/catppuccin-dark/common/wall/default.png}" --transition-type random
            elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
              swww img "${../theme/catppuccin-light/common/wall/default.png}" --transition-type random
-           else 
-             swww img "${../theme/nord/common/wall/default.png}" --transition-type random
            fi
     elif command -v swaybg >/dev/null 2>&1; then 
         killall swaybg
@@ -159,8 +154,6 @@ let
           swaybg -i "${../theme/catppuccin-dark/common/wall/default.png}" -m fill &
         elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
           swaybg -i "${../theme/catppuccin-light/common/wall/default.png}" -m fill &
-        else 
-          swaybg -i "${../theme/nord/common/wall/default.png}" -m fill &
         fi
     else 
         killall feh
@@ -169,8 +162,6 @@ let
           feh --randomize --bg-fill "${../theme/catppuccin-dark/common/wall/default.png}" &
         elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
           feh --randomize --bg-fill "${../theme/catppuccin-light/common/wall/default.png}" &
-        else 
-          feh --randomize --bg-fill "${../theme/nord/common/wall/default.png}" &
         fi
     fi
   '';
@@ -182,8 +173,6 @@ let
       waybar -c "$SDIR"/config -s "$SDIR"/style.css > /dev/null 2>&1 & 
     elif [[ "$GTK_THEME" == "Catppuccin-Latte-Green" ]]; then
       waybar -c "$SDIR"/light_config -s "$SDIR"/light_style.css > /dev/null 2>&1 &
-    else 
-      waybar -c "$SDIR"/nord_config -s "$SDIR"/nord_style.css > /dev/null 2>&1 &
     fi
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
@@ -214,7 +203,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    cava-internal
     wallpaper_random
     grimshot_watermark
     grimblast_watermark

@@ -11,11 +11,4 @@ stdenv.mkDerivation rec {
     mkdir -p $out/share/icons/Catppuccin-Frappe-Dark
     cp -va index.theme cursors $out/share/icons/Catppuccin-Frappe-Dark
   '';
-  meta = {
-    description = "Soothing pastel mouse cursors";
-    homepage = "https://github.com/Ruixi-rebirth/Catppuccin-cursor";
-    license = lib.licenses.gpl3;
-    platforms = lib.platforms.unix;
-    maintainers = [ lib.maintainers.Ruixi-rebirth ];
-  };
 }

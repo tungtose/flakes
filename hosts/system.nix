@@ -37,10 +37,11 @@
       gcc
       cargo
       nodejs_20
+      nodePackages.pnpm
       bash
-      # neofetch
-      # exa
-      # ranger
+      neofetch
+      ranger
+      /* exa */
       # transmission-gtk
       # lutris
       # (lutris.override {

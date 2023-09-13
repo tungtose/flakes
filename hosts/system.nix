@@ -41,6 +41,7 @@
       bash
       neofetch
       ranger
+      sqlite
       /* exa */
       # transmission-gtk
       # lutris

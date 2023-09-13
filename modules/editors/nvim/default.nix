@@ -45,6 +45,7 @@ in
       rustfmt
       beautysh
       nodePackages.prettier
+      nodePackages.vscode-langservers-extracted
       #-- Debug --#
       lldb
     ];

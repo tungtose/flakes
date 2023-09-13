@@ -27,6 +27,7 @@
       "$HOME/.local/bin"
       "$HOME/.npm-global/bin"
       "$HOME/.cargo/bin"
+      "$HOME/.local/share/pnpm"
     ];
   };
 }

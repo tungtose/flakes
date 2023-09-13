@@ -12,6 +12,8 @@ return {
 				require("null-ls").builtins.formatting.nixpkgs_fmt,
 				require("null-ls").builtins.formatting.beautysh,
 				require("null-ls").builtins.formatting.rustfmt,
+				require("null-ls").builtins.formatting.djhtml,
+				require("null-ls").builtins.diagnostics.djlint,
 			},
 		})
 	end,

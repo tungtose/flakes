@@ -18,8 +18,10 @@
       uflake = "cd /home/tung/projects/flakes && sudo nixos-rebuild switch --flake .#laptop";
       fl = "cd /home/tung/projects/flakes";
       fb = "sudo nixos-rebuild switch --flake .#laptop";
+      fbg = "sudo nixos-rebuild switch --upgrade --flake .#laptop";
       fw = "sudo nixos-rebuild switch --flake .#trash";
       up = "fl && fb";
+      upg = "fl && fbg";
       upwsl = "fl && fw";
       v = "nvim";
       vf = "fd --type f --hidden --exclude .git | fzf-tmux | xargs nvim";

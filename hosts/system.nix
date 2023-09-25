@@ -38,6 +38,7 @@
       cargo
       nodejs_20
       nodePackages.pnpm
+      nodePackages.yarn
       bash
       neofetch
       ranger

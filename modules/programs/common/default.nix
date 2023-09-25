@@ -7,7 +7,8 @@
   ./ranger
   ./resource_monitor
   ./search
-  ./kitty
   ./alacritty
   ./google
+  ./signal
+  /* ./kitty */
 ]

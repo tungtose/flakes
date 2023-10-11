@@ -30,6 +30,7 @@
     systemPackages = with pkgs; [
       git
       neovim
+      helix
       wget
       killall
       socat

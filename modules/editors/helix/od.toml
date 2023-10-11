@@ -1,0 +1,20 @@
+inherits = "onedarker"
+
+"ui.virtual.inlay-hint" = { fg = "light-gray" }
+"function" = { fg = "blue" }
+
+[palette]
+yellow = "#ebc275"
+blue = "#519FDF"
+red = "#D05C65"
+purple = "#B668CD"
+green = "#7DA869"
+gold = "#D19A66"
+cyan = "#46A6B2"
+white = "#ABB2BF"
+black = "#1f2329"
+light-black = "#1f2329"
+gray = "#252D30"
+faint-gray = "#ABB2BF"
+light-gray = "#636C6E"
+linenr = "#282C34"

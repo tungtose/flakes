@@ -3,6 +3,7 @@ name = "rust"
 
 [language.config]
 cargo.features = "all"
+auto-format = true
 check = { command = "clippy" }
 
 # TODO make this work

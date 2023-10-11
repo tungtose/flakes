@@ -1,7 +1,21 @@
-theme = "onedarker"
+theme = "od"
 
 [editor]
+true-color = true
 line-number = "relative"
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -28,8 +42,8 @@ C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 C-l = "select_next_sibling"
 
 # Personal preference
-o = ["open_below", "normal_mode"]
-O = ["open_above", "normal_mode"]
+# o = ["open_below", "normal_mode"]
+# O = ["open_above", "normal_mode"]
 
 # Muscle memory
 "{" = ["goto_prev_paragraph", "collapse_selection"]

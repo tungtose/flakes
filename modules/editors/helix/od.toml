@@ -1,6 +1,8 @@
 inherits = "onedarker"
 
 "ui.virtual.inlay-hint" = { fg = "light-gray" }
+"ui.linenr" = {fg = "light-gray"}
+"ui.linenr.selected" = { fg = "yellow" }
 "function" = { fg = "blue" }
 
 [palette]

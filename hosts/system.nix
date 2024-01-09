@@ -36,7 +36,6 @@
       socat
       zsh
       gcc
-      cargo
       nodejs_20
       nodePackages.pnpm
       nodePackages.yarn
@@ -44,6 +43,9 @@
       neofetch
       ranger
       sqlite
+
+      cargo
+      rustup
       /* exa */
       # transmission-gtk
       # lutris

@@ -16,21 +16,17 @@
   security.pam.services.swaylock = { };
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [
-      # xdg-desktop-portal-wlr
-      # xdg-desktop-portal-kde
-      # xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
+    configPackages = [ pkgs.gnome.gnome-session ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
     wlr = {
       enable = true;
-      settings = {
-        # uninteresting for this problem, for completeness only
-        screencast = {
-          chooser_type = "simple";
-          chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
-        };
-      };
+      /* settings = { */
+      /*   # uninteresting for this problem, for completeness only */
+      /*   screencast = { */
+      /*     chooser_type = "simple"; */
+      /*     chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or"; */
+      /*   }; */
+      /* }; */
     };
   };
 }

@@ -69,8 +69,6 @@
       plasma-pa
       slurp
       pulseaudioFull
-      /* qt6.qtwayland */
-      /* qt6.full */
       awscli2
       hdparm
     ];

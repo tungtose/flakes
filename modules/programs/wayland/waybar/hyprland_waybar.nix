@@ -53,15 +53,9 @@
                  animation-direction: alternate;
                }
                window#waybar {
-                   background: rgb(40, 44, 52);
+                  background: rgb(40, 44, 52);
                   color: white;
                }
-               /* window > box { */
-               /*   margin-left: 5px; */
-               /*   margin-right: 5px; */
-               /*   margin-top: 5px; */
-               /*   background-color: rgb(40, 44, 52); */
-               /* } */
          #workspaces {
                  padding-left: 0px;
                  padding-right: 4px;
@@ -154,9 +148,8 @@
         "position" = "top";
         modules-left = [
           "custom/launcher"
-          "wlr/workspaces"
+          "hyprland/workspaces"
           "temperature"
-          #"idle_inhibitor"
           "custom/wall"
         ];
         modules-center = [
@@ -188,8 +181,8 @@
           "exec" = "sleep 1s && cava-internal";
           "tooltip" = false;
         };
-        "wlr/workspaces" = {
-          "format" = "{icon}";
+        "hyprland/workspaces" = {
+          "format" = "{name}";
           "on-click" = "activate";
           # "on-scroll-up" = "hyprctl dispatch workspace e+1";
           # "on-scroll-down" = "hyprctl dispatch workspace e-1";

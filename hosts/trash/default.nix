@@ -14,7 +14,7 @@
 
   boot.isContainer = true;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     /* nerdfonts */
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
